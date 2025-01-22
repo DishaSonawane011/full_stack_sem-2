@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body { 
+        font-family: Arial, sans-serif; 
+        background: linear-gradient(to bottom right, #2C3E50, #4CA1AF); 
+    }  
+    .workout-container { 
+        margin-top: 20px; 
+        padding: 20px; 
+    }  
+    .header, .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .gym-image {
+        width: 100%;
+        position: relative;
+        height: 100%; /* Makes the image cover the full viewport height */
+        border-radius: 10px;
+    }
+
+    .gym-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the container without distortion */
+        border-radius: 10px;
+    }
+
+    .quote-overlay {
+        color: #ffffff;
+        padding: 1rem;
+        border-radius: 5px;
+        font-size: xx-large;
+        font-weight: bolder;
+        background: rgba(0, 0, 0, 0.7); /* Slightly transparent black background */
+    }
+    .welcome-section { 
+        background-color: #000000; 
+        color: #343a40; 
+        padding: 20px 0; 
+        text-align: center; 
+    }
+    .welcome-section { 
+        font-size: 32px; 
+        font-weight: bold; 
+        color: #ffffff;
+    } 
+    .welcome-section  { 
+        font-size: 18px; 
+        margin-top: 20px;
+    } 
+    .testimonials { 
+        background-color: #e9ecef; 
+        padding: 50px 0;
+    } 
+    .testimonial { 
+        margin-bottom: 40px; 
+    } 
+    .testimonial  { 
+        font-size: 16px;
+    } 
+    .special-offers { 
+        background-color: #f8f9fa; 
+        padding: 40px 0; 
+        text-align: center; 
+    }
+
+    .trainer-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .trainer-card:hover {
+        transform: scale(1.05);
+    }
+
+    .trainer-card img { 
+        border-radius: 9%; /* Makes the images square */ 
+        width: 100%; /* Ensures the image fills the container */ 
+        height: 300px; 
+        object-fit: cover; 
+        margin-bottom: 15px;
+      
+    }
+    .trainer-card  { 
+        font-weight: bold; 
+        color: #2C3E50; /* Make the name color stand out */ 
+        margin-bottom: 5px; /* Adds space between the name and the title */ 
+    } 
+    .trainer-card  { 
+        font-style: italic; 
+        color: #000000; /* Make the title color stand out */ }
+    
+    .map iframe {
+        border: 0;
+        border-radius: 10px;
+        width: 100%;
+        height: 450px;
+    }
+    .carousel-item { 
+        perspective: 1000px; 
+    } 
+    .carousel-item img { 
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        border-radius: 10px; 
+        transition: transform 1s ease-in-out; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    } 
+    .carousel-item img:hover { 
+        transform: rotateY(10deg) rotateX(10deg); 
+    }
+    
+
+</style>
+<!-- Welcome Section --> 
+ <div class="welcome-section"> 
+    <div class="container"> 
+        <h2>Welcome to FlexFit Gym</h2> 
+        <p>Your journey to fitness begins here! Join us for a healthier and stronger you.</p> 
+    </div> 
+</div>
+
+<!-- Gym Image with Quote Carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" object fit="fit"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner gym-image">
+        <div class="carousel-item active position-relative">
+            <a href="page1.html">
+                <img src="https://images4.alphacoders.com/112/1128335.jpg" alt="Gym Image 1" class="d-block w-100">
+                <div class="quote-overlay position-absolute top-50 start-50 translate-middle text-center text-white p-3 rounded">
+                    "Believe you can and you're halfway there."
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item position-relative">
+            <a href="page2.html">
+                <img src="https://media.istockphoto.com/id/619088796/photo/fitness-girl-lifting-dumbbell-in-the-morning.jpg?s=612x612&w=0&k=20&c=m8gUYPVV1ZfWpfjrKjzWn-a8DVHnw1hGp-rjh6c40f0=" alt="Gym Image 2" class="d-block w-100">
+                <div class="quote-overlay position-absolute top-50 start-50 translate-middle text-center text-white p-3 rounded">
+                    "Push yourself, because no one else is going to do it for you."
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item position-relative">
+            <a href="page3.html">
+                <img src="https://www.fitness-world.in/wp-content/uploads/2022/01/5-Reasons-Why-Your-Residential-Building-Needs-a-Professional-Gym-Banner-1200x620.jpg" alt="Gym Image 3" class="d-block w-100">
+                <div class="quote-overlay position-absolute top-50 start-50 translate-middle text-center text-white p-3 rounded">
+                    "Success starts with self-discipline."
+                </div>
+            </a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Our Trainers Section --> 
+<div class="container mt-5"> 
+    <h2 class="text-center" style="font-weight: bold;">Our Trainers</h2>
+    <div class="row mt-4"> 
+        <div class="col-md-4"> 
+            <div class="trainer-card text-center p-3 shadow"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReY5aQthahoRueGa_wEIRWcqBxLcTB2QXSr2sohmJ74teYik9ORUcbescP0wMq7Vjt9Sw&usqp=CAU" alt="Trainer 1" class="img-fluid ">
+                <h3>Emily Davis</h3> 
+               <h4><p>Personal Trainer</p> </h4> 
+            </div> 
+        </div> 
+        <div class="col-md-4"> 
+            <div class="trainer-card text-center p-3 shadow"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT60MQMZ2FV_SRGce98eRoIc6YlsCdmwM9_vA&s" alt="Trainer 2" class="img-fluid "> 
+                <h3>Jane Smith</h3> 
+                <h5><p>Group Fitness Instructor</p> </h5>
+            </div> 
+        </div> 
+        <div class="col-md-4"> 
+            <div class="trainer-card text-center p-3 shadow"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc3TtAzQFFQx6lrUBks7rZ_Z0Bfy-MKhuUZj4__t_jdlQWQjfZ49KSMYF2OGSEaE_9VXA&usqp=CAU" alt="Trainer 3" class="img-fluid "> 
+                <h3>Bob Johnson</h3> 
+                <h5><p>Strength and Conditioning Coach</p> </h5>
+            </div> 
+        </div> 
+    </div> 
+</div>
+<!-- Testimonials Section --> 
+ <div class="container mt-5 testimonials"> 
+    <h2 class="text-center">What Our Members Say</h2> 
+    <div class="row mt-4"> 
+        <div class="col-md-4 testimonial"> 
+        <p>"FlexFit Gym has transformed my life. The trainers are amazing and the community is so supportive!" - Sarah M.</p> 
+        </div> 
+        <div class="col-md-4 testimonial"> 
+            <p>"The variety of classes offered keeps me motivated and engaged. I look forward to every session!" - John D.</p> 
+        </div> 
+        <div class="col-md-4 testimonial"> 
+            <p>"I've seen incredible results since joining FlexFit. Highly recommend to anyone serious about fitness." - Emily R.</p> 
+        </div> 
+    </div> 
+</div> 
+
+
+
+<!-- Map Section -->
+<div class="container mt-5">
+    <h2 class="text-center">Find Us</h2>
+    <div class="map mt-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8382499999997!2d-122.08405108469735!3d37.38534807930031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425a1c1d%3A0xb9c9e1baf9c3c3b5!2sGoogleplex!5e0!3m2!1sen!2sin!4v1643723484579!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <address>
+            <strong>Christ University Lavasa Campus</strong><br>
+            30 Valor Court, PO Dasve<br>
+            Lavasa, Mulshi, Pune, Maharashtra 412112<br>
+            Phone: 1800 123 2009<br>
+            Email: mail.lavasa@christuniversity.in
+        </address>
+    </div>
+</div>
+
+{% endblock content %}

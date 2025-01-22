@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container tracker-container">
+    <h1 class="text-center">Workout Tracker</h1>
+    
+    <!-- Display existing tracker entries -->
+    {% if entries %}
+        <h2>Your Entries</h2>
+        <div>
+            {% for entry in entries %}
+                <div class="tracker-item">
+                    <p><strong>Date:</strong> {{ entry.date }}</p>
+                    <p><strong>Workout Type:</strong> {{ entry.workout_type }}</p>
+                    <p><strong>Duration:</strong> {{ entry.duration }}</p>
+                    <p><strong>Notes:</strong> {{ entry.notes }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No entries found. Add your first workout below!</p>
+    {% endif %}
+    
+    <!-- Add new tracker entry -->
+    <h2>Add New Tracker Entry</h2>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" name="date" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="workout_type" class="form-label">Workout Type</label>
+            <input type="text" id="workout_type" name="workout_type" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration (HH:MM enter in minutes)</label>
+            <input type="text" id="duration" name="duration" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="notes" class="form-label">Notes</label>
+            <textarea id="notes" name="notes" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Entry</button>
+    </form>
+</div>
+{% endblock content %}

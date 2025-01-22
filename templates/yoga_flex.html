@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Yoga Flex Workout</h1>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h2 class="text-center">Workout Details</h2>
+            <p>Experience the perfect blend of strength, flexibility, and relaxation with our Yoga Flex workout.</p>
+            <ul class="list-group">
+                {% for exercise in exercises %}
+                <li class="list-group-item">
+                    <strong>{{ exercise.name }}</strong>: {{ exercise.description }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center">Video Tutorial</h2>
+            <video controls class="w-100">
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+{% endblock %}

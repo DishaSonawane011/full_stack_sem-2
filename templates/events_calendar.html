@@ -1,0 +1,30 @@
+<!-- templates/events_calendar.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container events-table mt-5">
+    <h1 class="text-center">Events Calendar</h1>
+    <a href="{% url 'add_event' %}" class="btn btn-primary mb-3">Add New Event</a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-header">
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.time }}</td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

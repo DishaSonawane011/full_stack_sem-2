@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Personal Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            color: #555;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .message {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Details</h1>
+        {% if details %}
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{ details.name }}</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{ details.age }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ details.address }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ details.email }}</td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>{{ details.phone_number }}</td>
+            </tr>
+            <tr>
+                <td>Bio</td>
+                <td>{{ details.bio }}</td>
+            </tr>
+        </table>
+        {% else %}
+        <div class="message">No details available.</div>
+        {% endif %}
+    </div>
+</body>
+</html>
+{% endblock content %}

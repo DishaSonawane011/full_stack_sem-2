@@ -1,0 +1,38 @@
+<!-- templates/add_attendance.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Add Attendance</h1>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="class_name" class="form-label">Class Name</label>
+            <select class="form-control" id="class_name" name="class_name" required>
+                {% for class in classes %}
+                <option value="{{ class.id }}">{{ class.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="member" class="form-label">Member Name</label>
+            <select class="form-control" id="member" name="member" required>
+                {% for member in members %}
+                <option value="{{ member.id }}">{{ member.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="attendance_date" class="form-label">Attendance Date</label>
+            <input type="date" class="form-control" id="attendance_date" name="attendance_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Add Attendance</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+    <div class="container workout-container">
+        <h1 class="workout-title text-center">Full Body Workout</h1>
+        <div class="workout-description text-center">
+            A comprehensive workout targeting all major muscle groups. Ideal for overall strength and fitness.
+        </div>
+        <div class="video-container">
+            <h2 class="text-center">Watch the Full Body Workout Video</h2>
+            <video class="video" controls>
+                <source src="/gymfitness/static/20 min Full Body Workout (no equipment).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="exercise-list">
+            <h3 class="text-center">Exercises Included</h3>
+            <div class="exercise-item">
+                <strong>Jumping Jacks:</strong> 3 sets of 20 reps
+            </div>
+            <div class="exercise-item">
+                <strong>Push-Ups:</strong> 3 sets of 15 reps
+            </div>
+            <div class="exercise-item">
+                <strong>Squats:</strong> 3 sets of 20 reps
+            </div>
+            <div class="exercise-item">
+                <strong>Burpees:</strong> 3 sets of 10 reps
+            </div>
+            <div class="exercise-item">
+                <strong>Plank:</strong> 3 sets of 1 minute
+            </div>
+            <div class="exercise-item">
+                <strong>Mountain Climbers:</strong> 3 sets of 20 reps
+            </div>
+        </div>
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Membership Page</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6OjEzQnVPdB9cyKf_ZunAW-XUknFTdRDi8A&s');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .membership-container {
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9); /* Adds slight transparency to the background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        .membership-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .membership-plan {
+            margin-bottom: 2rem;
+        }
+        .plan-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .plan-body {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .plan-benefits {
+            margin-top: 1rem;
+        }
+        .plan-benefits li {
+            margin-bottom: 0.5rem;
+        }
+        .plan-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .btn-signup {
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="membership-container">
+    <h1 class="membership-title">Membership Plans</h1>
+
+    <div class="membership-plan">
+        <div class="plan-header">Basic Plan</div>
+        <div class="plan-body">
+            <ul class="plan-benefits">
+                <li>Access to gym facilities</li>
+                <li>Free initial consultation</li>
+                <li>Group fitness classes</li>
+            </ul>
+            <div class="plan-price">$19.99/month</div>
+            <button class="btn btn-primary btn-signup">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="membership-plan">
+        <div class="plan-header">Premium Plan</div>
+        <div class="plan-body">
+            <ul class="plan-benefits">
+                <li>Access to gym facilities</li>
+                <li>Free initial consultation</li>
+                <li>Group fitness classes</li>
+                <li>Personal trainer sessions</li>
+                <li>Nutrition guidance</li>
+            </ul>
+            <div class="plan-price">$49.99/month</div>
+            <button class="btn btn-primary btn-signup">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="membership-plan">
+        <div class="plan-header">VIP Plan</div>
+        <div class="plan-body">
+            <ul class="plan-benefits">
+                <li>Access to gym facilities</li>
+                <li>Free initial consultation</li>
+                <li>Group fitness classes</li>
+                <li>Personal trainer sessions</li>
+                <li>Nutrition guidance</li>
+                <li>Priority booking for classes</li>
+                <li>Exclusive VIP events</li>
+            </ul>
+            <div class="plan-price">$99.99/month</div>
+            <button class="btn btn-primary btn-signup">Sign Up</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock content %}
